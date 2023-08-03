@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registration</title>
+
+	<!---custom css link---->
+	<link rel="stylesheet" type="text/css" href="css/register.css">
+
+	<link rel="stylesheet"
+  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<!---start header---->
+	<header>
+		<a href="#" class="logo">
+			<img src="img/logo.png">
+		</a>
+
+		<ul class="navbar">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="index.html">Categories</a></li>
+			<li><a href="index.html">Courses</a></li>
+			<li><a href="index.html">About Us</a></li>
+			<li><a href="index.html">Contact</a></li>
+		</ul>
+
+		<div class="header-icons">
+			<a href="login.html"><i class='bx bx-user'></i></a>
+			<a href="#"><i class='bx bx-heart' ></i></a>
+			<a href="#"><i class='bx bx-cart' ></i></a>
+			<div class="bx bx-menu" id="menu-icon"></div>
+		</div>
+	</header>
+
+	<!---start home section---->
+	<section class="home" id="home">
+		<div class="container">
+            <h2>Registration</h2>
+            <form name="register" onsubmit="return validation()" action="php/register.php" method="POST">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="username" id="username" name="username" placeholder="Enter Your Username">
+                  </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter Your Email">
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter Your Password">
+              </div>
+              <div class="form-group">
+                <input type="submit" value="Register">
+              </div>
+            </form>
+
+			<script type="text/javascript">
+				function validation()
+				{
+					var username = document.register.username.value;
+					var email = document.register.email.value;
+					var password = document.register.password.value;
+		
+					if(username == "" || email == "" || password == "")
+					{
+						alert("All the fields should not be blank");
+						return;
+					}
+		
+					if(password.length < 6 || password.length > 12)
+					{
+						alert("Password must be 6-12 character");
+						return;
+					}
+		
+					var str = username.slice(0,1);
+		
+					if(username.slice(0,1)=="_" || username.slice(0,1)=="@" || str.match(/[0-9]/)!=null)
+					{
+						alert("Username name should not start with _, @ and Number");
+						return;
+					}
+		
+					var email = document.login.email.value;
+					var str2 = email.slice(-1,-10);
+		
+					if(email.slice(-1,-10) != "@gmail.com")
+					{
+						alert("Email must be ends with @gmail.com");
+						return;
+					}
+		
+				}
+				
+			</script>
+
+
+          </div>
+
+		<div class="home-img">
+			<img src="img/home.png">
+		</div>
+	</section>
+
+	
+
+	<!---start contact section---->
+	<section class="contact" id="contact">
+		<div class="main-contact">
+			<div class="contact-content">
+				<img src="img/logo.png">
+				<li><a href="#">Facebook</a></li>
+				<li><a href="#">Instagram</a></li>
+				<li><a href="#">Twitter</a></li>
+			</div>
+
+			<div class="contact-content">
+				<li><a href="index.html">Home</a></li>
+			  <li><a href="index.html">Categories</a></li>
+			  <li><a href="index.html">Courses</a></li>
+			  <li><a href="index.html">About Us</a></li>
+			  <li><a href="index.html">Contact</a></li>
+			</div>
+
+			<div class="contact-content">
+				<li><a href="#">Profile</a></li>
+				<li><a href="login.html">Login</a></li>
+				<li><a href="register.html">Register</a></li>
+				<li><a href="#">Instructor</a></li>
+				<li><a href="#">Dashboard</a></li>
+			</div>
+
+			<div class="contact-content">
+				<li><a href="#">Mubtasim Fuad Opee (201-15-13903)</a></li>
+				<li><a href="#">Sabrina Akter Sorna(201-15-13714)</a></li>
+				<li><a href="#">Ishrat Suchita (201-15-13709)</a></li>
+				<li><a href="#">15minutecourse@gmail.com</a></li>
+				<li><a href="#">Daffodil Smart City (DSC)<br>Birulia, Savar, Dhaka-1216</a></li>
+			</div>
+
+		</div>
+	</section>
+
+	<div class="last-text">
+		<p>© 2023 15MinuteCourse. All rights reserved.</p>
+	</div>
+
+	<!---custom js link---->
+	<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>
